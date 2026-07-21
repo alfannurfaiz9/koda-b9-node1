@@ -8,10 +8,10 @@ import moment from "moment";
 
   const format = moment(answer, "DD-MM-YYYY", true).format("DD/MM/YYYY");
 
-  if (format !== "Invalid date") {
-    console.log(format);
-  } else {
+  if (format === "Invalid date") {
     console.log("Format tanggal salah");
+  } else {
+    console.log(format);
   }
 
   rl.close();
