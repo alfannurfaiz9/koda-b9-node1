@@ -3,13 +3,21 @@ import dateConvesionMoment from "./src/minitask-1.js";
 import dateConversionWithoutMoment from "./src/minitask-2.js";
 
 (async () => {
-  const rl = createInterface({ input: process.stdin, output: process.stdout });
-  const answer = await rl.question("Masukkan tanggal \n");
+  const rl = createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
 
-  dateConvesionMoment(answer);
-  dateConversionWithoutMoment(answer);
+  try {
+    const answer = await rl.question("Masukkan tanggal \n");
 
-  rl.close();
+    dateConvesionMoment(answer);
+    dateConversionWithoutMoment(answer);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    rl.close();
+  }
 })();
 
 // Minitask-3 Eslint

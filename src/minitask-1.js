@@ -4,9 +4,10 @@ const dateConvesionMoment = (answer) => {
   const format = moment(answer, "DD-MM-YYYY", true).format("DD/MM/YYYY");
 
   if (format === "Invalid date") {
-    console.log("Format tanggal salah");
+    throw new Error("Format tanggal salah");
   } else {
     console.log(format);
+    return format;
   }
 };
 

@@ -21,12 +21,13 @@ const dateConversionWithoutMoment = (answer) => {
   }
 
   if (!isValid) {
-    console.log("Format tanggal salah");
+    throw new Error("Format tanggal salah");
   } else {
     arrs[2] = "/";
     arrs[5] = "/";
 
     console.log(arrs.join(""));
+    return arrs.join("");
   }
 };
 
