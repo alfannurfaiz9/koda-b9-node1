@@ -1,33 +1,31 @@
 const dateConversionWithoutMoment = (answer) => {
   const input = answer.split("-");
-  const arrs = answer.split("");
+  let arrs = "";
   let isValid = true;
 
-  if (arrs[2] !== "-" || arrs[5] !== "-") {
-    isValid = false;
-  } else if (Number(input[0]) > 31) {
-    isValid = false;
-  } else if (Number(input[1] > 12)) {
+  if (
+    isNaN(Number(input[0])) ||
+    Number(input[0]) > 31 ||
+    isNaN(Number(input[1])) ||
+    Number(input[1]) > 12 ||
+    isNaN(Number(input[2]))
+  ) {
     isValid = false;
   }
 
-  for (let i = 0; i < arrs.length; i++) {
-    if (i === 2 || i === 5) {
-      continue;
-    } else if (arrs[i].charCodeAt(0) < 48 || arrs[i].charCodeAt(0) > 57) {
-      isValid = false;
-      break;
+  for (let i = 0; i < answer.length; i++) {
+    if (answer.charCodeAt(i) === 45) {
+      arrs += String.fromCharCode(answer.charCodeAt(i) + 2);
+    } else {
+      arrs += answer[i];
     }
   }
 
   if (!isValid) {
     throw new Error("Format tanggal salah");
   } else {
-    arrs[2] = "/";
-    arrs[5] = "/";
-
-    console.log(arrs.join(""));
-    return arrs.join("");
+    console.log(arrs);
+    return arrs;
   }
 };
 
