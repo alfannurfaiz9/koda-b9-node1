@@ -1,0 +1,17 @@
+{
+  "name": "day-1",
+  "version": "1.0.0",
+  "description": "date conversion program from DD-MM-YYYY to DD/MM/YYYY",
+  "main": "minitask-1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node minitask-1.js"
+  },
+  "keywords": ["date conversion"],
+  "author": "alfan",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
