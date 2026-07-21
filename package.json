@@ -5,13 +5,23 @@
   "main": "minitask-1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "lint": "eslint .",
+    "lint:fix":"eslint . --fix"
   },
-  "keywords": ["date conversion"],
+  "keywords": [
+    "date conversion"
+  ],
   "author": "alfan",
   "license": "MIT",
   "type": "module",
   "dependencies": {
     "moment": "^2.30.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^10.7.0",
+    "globals": "^17.7.0"
   }
 }
